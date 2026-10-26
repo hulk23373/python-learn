@@ -17,7 +17,7 @@ import io
 import contextlib
 
 # 条件分支
-def test_if_else():
+def demo_if_else():
     x = 80
     if x >= 90:
         print(f"成绩优秀")
@@ -30,22 +30,22 @@ def test_if_else():
     print(f"{'优秀' if x >= 90 else '良好'}")
 
 # match/case
-def test_match_case():
+def demo_match_case():
     samples = [0, 2, -5, 42, "hi", "verylong", (1, 2), [1, 2, 3], [],
                {"type": "user", "name": "张三", "extra": 1}, None]
     # match case
-    def test_describe(value):
+    def demo_describe(value):
         match value:
             case int(x):
                 return f"整数{x}"
             case _:  # default
                 return f"其他"
     for value in samples:
-        t = test_describe(value)
+        t = demo_describe(value)
         print(f"{t}")
 
 # 循环，for/while/break/continue/else
-def test_for():
+def demo_for():
     # for
     for x in range(1, 10, 2):
         print(f"{x}")
@@ -61,7 +61,7 @@ def test_for():
         print("xxxx")
 
 # 空语句，pass
-def test_pass():
+def demo_pass():
     x = 10
     if x < 20:
         pass  # 什么都不做
@@ -69,7 +69,7 @@ def test_pass():
         print(f"{x}")
 
 # 异常处理
-def test_exception():
+def demo_exception():
     try:
         try:
             x = 10 / 0
@@ -82,7 +82,7 @@ def test_exception():
         print(f"finally无论如何都会执行")
 
 # with上下文管理
-def test_with():
+def demo_with():
     # with 保证【无论如何都会执行清理】，比 try/finally 更简洁
     # 典型场景：文件、锁、数据库连接、网络会话
     file = io.StringIO("第一行\n第二行\n")
@@ -95,13 +95,13 @@ def test_with():
         print(f"{content}")
 
 # assert 断言
-def test_assert():
-    x = 10
+def demo_assert():
+    x = 11
     assert x > 10, f"x必须大于10，x当前的值为：{x}"
     print(f"{x}")
 
 # yield
-def test_yield():
+def demo_yield():
     def count_up(n):
         x = 3
         while x < n:
@@ -117,14 +117,14 @@ def test_yield():
 
 def main():
     print(f"{'=' * 60!r}")
-    # test_if_else()
-    # test_match_case()
-    # test_for()
-    # test_pass()
-    # test_exception()
-    # test_with()
-    # test_assert()
-    test_yield()
+    # demo_if_else()
+    # demo_match_case()
+    # demo_for()
+    # demo_pass()
+    # demo_exception()
+    # demo_with()
+    # demo_assert()
+    demo_yield()
 
 if __name__ == "__main__":
     main()
